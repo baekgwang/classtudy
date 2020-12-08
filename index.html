@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PROJECT</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">Welcome</span> </h1>
+	
+    <p></p>
+   
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">About Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>안녕하세요 김도영입니다. 저는 전 회사를 다니며 업무 특성상 주로 앱 업데이트 및 수정 사항에 대해 개발 부서와 소통이 많았습니다.  <br>
+	저는 개발 부서에 전달했던 기획 안이 앱이나 웹 상에서 그대로 구현되는 것을 보고 관심이 생겼습니다. <br>
+	그 잠깐의 관심으로 끝나지 않고 저는 인터넷 참고자료 및 유튜브 영상을 찾아보며 그 분야에 대해 좀더 자세하게 알아봤습니다. <br> 
+	이러한 과정속에 국비 지원으로 개발분야에 공부를 할 수 있다는 것을 알게 되었습니다.  본격적으로 개발 분야를 공부하기 위해 자바 기반 안드로이드앱 개발 과정을 수강하였습니다. <br>
+    과정에 참여하면서 JAVA 언어 문법을 공부하였고, JAVA 언어를 기반으로 하는 JSP를 이용하여 동적인 웹사이트를 생성하는 법을 배웠습니다. <br>
+	또한 ORACLE, MY SQL를 사용하여 데이터베이스에 대하여 공부를 하였습니다. 
+	마지막으로 Spring boot를 사용 사용할 때에는 MVC패턴으로 팀 프로젝트를 진행했습니다. 감사합니다.
+
+    </p>
+	<br><br>
+    <h2 class="w3-text-light-grey">My Skills</h2>
+    <p class="w3-wide">JAVA</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+    </div>
+    <p class="w3-wide">SPRING BOOT</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+    </div>
+	<p class="w3-wide">MY SQL</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:65%"></div>
+    </div>
+    <p class="w3-wide">HTML & CSS</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:77%"></div>
+    </div><br>
+    
+  
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Project result</h2>
+    <hr style="width:200px" class="w3-opacity">
+	<img src="./img/img1.png" width="485" height="397">
+	<a href="https://github.com/jho0519/DOYOUNG/blob/master/classtudy33/src/main/java/com/edu/freeboard/controller/FreeboardController.java"><img src="./img/img3.png" width="485" height="400"></a>
+	<br><br>
+	<a href="https://github.com/jho0519/DOYOUNG/blob/master/classtudy33/src/main/java/com/edu/freeboard/mapper/FreeboardMapper.java"><img src="./img/img6.png" width="485" height="400"></a>
+	<a href="https://github.com/jho0519/DOYOUNG/blob/master/classtudy33/src/main/java/com/edu/freeboard/service/FreeboardService.java"><img src="./img/img7.png" width="485" height="400"></a>
+	
+	<p>지금 이 페이지는 자유게시판 게시글 작성하는 화면으로써 제목, 태그,말머리, 내용을 입력하면 입력한 데이터가 POST로 데이터베이스에 저장되어 그 이후 GET 방식으로 저장된 데이터가 게시판 화면에 보여집니다.</p><br>
+	<p>자세한 코드는 이미지를 클릭하시면 해당 깃 화면으로 이동합니다. 감사합니다.</p>
+    
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Address: Seoul, Sadang-dong, Dongjak-gu</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: 010-9378-0502</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: jho0519@naver.com</p>
+    </div><br>
+    
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
