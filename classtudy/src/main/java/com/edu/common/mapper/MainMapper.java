@@ -15,13 +15,13 @@ public interface MainMapper {
 	// 자유게시판 조회수 순위
 	public List<MainDTO> freeBoardviewsList() throws Exception;
 	// 게시글 제목+내용 검색
-	public List<FreeboardDTO> searchAll(String keyword, int startNo, int numOfPage, String viewCategory) throws Exception;
+	public List<FreeboardDTO> searchAll(String keyword, int startNo, int numOfPage, String tags) throws Exception;
 	// 게시글 제목 검색
-	public List<FreeboardDTO> searchTitle(String keyword, int startNo, int numOfPage, String viewCategory) throws Exception;
+	public List<FreeboardDTO> searchTitle(String keyword, int startNo, int numOfPage, String tags) throws Exception;
 	// 게시글 내용 검색
-	public List<FreeboardDTO> searchContent(String keyword, int startNo, int numOfPage, String viewCategory) throws Exception;
+	public List<FreeboardDTO> searchContent(String keyword, int startNo, int numOfPage, String tags) throws Exception;
 	// 게시글 작성자 검색
-	public List<FreeboardDTO> searchWriter(String keyword, int startNo, int numOfPage, String viewCategory) throws Exception;
+	public List<FreeboardDTO> searchWriter(String keyword, int startNo, int numOfPage, String tags) throws Exception;
 	// 게시글 검색 - 정해진 말머리만
 	public List<FreeboardDTO> search(String keyword, String viewCategory, int startNo, int numOfPage) throws Exception;
 	// 게시글 목록
@@ -32,7 +32,6 @@ public interface MainMapper {
 	public List<FreeboardDTO> boardListNotice(int numOfNotice, int noticeCount) throws Exception;
 	// 공지사항 목록 보기 - 첫번째
 	public List<FreeboardDTO> boardListNoticeFirst(int numOfNotice) throws Exception;
-	
 	
 	// 공지사항 게시글 개수 추출
 	public int getNoticeCount() throws Exception;
@@ -59,7 +58,5 @@ public interface MainMapper {
 	public int insertMainhits() throws Exception;
 	// 최근 날짜 컬럼 조회
 	public String getRegdate() throws Exception;
-	
-	
 	
 }

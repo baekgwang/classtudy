@@ -59,20 +59,20 @@ public class MainService {
 	}
 	
 	// 게시글 제목+내용 검색
-	public List<FreeboardDTO> searchAll(String keyword, int startNo, int numOfPage, String viewCategory) throws Exception {
-		return mainMapper.searchAll(keyword, startNo, numOfPage, viewCategory);
+	public List<FreeboardDTO> searchAll(String keyword, int startNo, int numOfPage, String tags) throws Exception {
+		return mainMapper.searchAll(keyword, startNo, numOfPage, tags);
 	}
 	// 게시글 제목 검색
-	public List<FreeboardDTO> searchTitle(String keyword, int startNo, int numOfPage, String viewCategory) throws Exception {
-		return mainMapper.searchTitle(keyword, startNo, numOfPage, viewCategory);
+	public List<FreeboardDTO> searchTitle(String keyword, int startNo, int numOfPage, String tags) throws Exception {
+		return mainMapper.searchTitle(keyword, startNo, numOfPage, tags);
 	}
 	// 게시글 내용 검색
-	public List<FreeboardDTO> searchContent(String keyword, int startNo, int numOfPage, String viewCategory) throws Exception {
-		return mainMapper.searchContent(keyword, startNo, numOfPage, viewCategory);
+	public List<FreeboardDTO> searchContent(String keyword, int startNo, int numOfPage, String tags) throws Exception {
+		return mainMapper.searchContent(keyword, startNo, numOfPage, tags);
 	}
 	// 게시글 작성자 검색
-	public List<FreeboardDTO> searchWriter(String keyword, int startNo, int numOfPage, String viewCategory) throws Exception {
-		return mainMapper.searchWriter(keyword, startNo, numOfPage, viewCategory);
+	public List<FreeboardDTO> searchWriter(String keyword, int startNo, int numOfPage, String tags) throws Exception {
+		return mainMapper.searchWriter(keyword, startNo, numOfPage, tags);
 	}
 	// 게시글 검색 - 정해진 말머리만
 	public List<FreeboardDTO> search(String keyword, String viewCategory, int startNo, int numOfPage) throws Exception {		

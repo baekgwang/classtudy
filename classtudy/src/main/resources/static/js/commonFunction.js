@@ -556,15 +556,19 @@ function notiCheck(notiNo) {
 // 알림 모두 확인
 //---------------------------------------------------------------------
 function notiCheckAll(memberId) {
-	$.ajax({
-		url: 	"/noti/checkAll/",
-		type: 	"post",
-		dataType: "json",
-		data: 	{"memberId" : memberId},
-		success: function(data) {
-			if(data > 0) { notiLoad(); } //알림 확인 후 알림 뱃지를 다시 출력
-		}
-	});
+	if(confirm("모두 확인 하시겠습니까?") == false){
+		return false;
+	} else {
+		$.ajax({
+			url: 	"/noti/checkAll/",
+			type: 	"post",
+			dataType: "json",
+			data: 	{"memberId" : memberId},
+			success: function(data) {
+				if(data > 0) { notiLoad(); } //알림 확인 후 알림 뱃지를 다시 출력
+			}
+		});
+	}
 }
 
 //---------------------------------------------------------------------
@@ -665,14 +669,56 @@ function viewSecondList(visibleId, btnId) {
 }
 
 //---------------------------------------------------------------------
-// 테그별 게시판 게시글 검색 - 제목 및 내용
+// 등급 계산을 위해 가입일과 오늘날짜 사이의 평일구하기(가입일은 count제외)
+//---------------------------------------------------------------------
+function getWorkDay(subscriptionDate) {
+	//subscriptionDate가 "yyyy-MM-dd"형식으로 들어오기 때문에 substring을 활용해 값을 잘라준다.
+	var subYear = Number(subscriptionDate.substring(0, 4));
+	var subMonth = Number(subscriptionDate.substring(5, 7));
+	var subDay = Number(subscriptionDate.substring(8, 10));
+
+	var subscriptDate = new Date(subYear, subMonth-1, subDay);
+	
+	var date = new Date(); 
+	var year = date.getFullYear(); 
+	var month = new String(date.getMonth()+1); 
+	var day = new String(date.getDate()); 
+
+	var today = new Date(year, month-1, day);
+
+	//평일 갯수를 세기위해 workDay 변수를 만들어준다.
+	var workDay = 0;
+
+	while(true) {  
+
+	    var temp_date = subscriptDate;
+	    if(temp_date.getTime() > today.getTime()) {
+	        break;
+	    } else {
+	        var tmp = temp_date.getDay();
+	        if(tmp == 0 || tmp == 6) {
+	            // 주말
+	            console.log("주말");
+	        } else {
+	            // 평일
+	            console.log("평일");
+	            workDay++;
+	        }
+	        temp_date.setDate(subscriptDate.getDate() + 1); 
+	    }
+	}
+	return workDay-1;
+}
+
+//---------------------------------------------------------------------
+// 태그별 게시판 게시글 검색 - 제목 및 내용
 //---------------------------------------------------------------------
 function searchfTagBoard(keyword, searchCode, searchCategory) {
 	// 검색어가 입력되었는지 확인
 	if(keyword != ""){
 		location.href=path + "/tags/search/" + searchCode + "/" + keyword + "/" + searchCategory;
 	} else {
-		alert("검색어를 입력해주세요.22");
+		alert("검색어를 입력해주세요.");
 		return false;
 	}
 }
@@ -689,5 +735,3 @@ function searchfBoard(keyword, searchCode, viewCategory) {
 		return false;
 	}
 }
-
-
